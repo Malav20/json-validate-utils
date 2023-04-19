@@ -1,0 +1,36 @@
+{
+	"name": "json-validate-utils",
+	"version": "1.0.0",
+	"description": "A simple json validator that validates data against schema",
+	"main": "dist/index.min.js",
+	"scripts": {
+		"build": "uglifyjs index.js -c -m --source-map -o dist/index.min.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/json-validate-utils"
+	},
+	"keywords": [
+		"json",
+		"validation",
+		"schema",
+		"object",
+		"data",
+		"utility",
+		"utils",
+		"error",
+		"issue",
+		"validate",
+		"validation-helper",
+		"validation-utility",
+		"javascript"
+	],
+	"author": "Malav Parekh",
+	"license": "ISC",
+	"devDependencies": {
+		"uglify-js": "^3.17.4",
+		"webpack": "^5.79.0",
+		"webpack-cli": "^5.0.1"
+	}
+}
