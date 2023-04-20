@@ -1,14 +1,14 @@
-# json-validator-plus
+# json-validate-utils
 
 A lightweight JSON validator for Node.js and browser environments, with support for advanced validation features.
 
 ## Installation
 
-You can install `json-validator-plus` via npm:
+You can install `json-validate-utils` via npm:
 
 ## Usage
 
-`json-validator-plus` provides a `validateJSON` method that takes in two parameters:
+`json-validate-utils` provides a `validateJSON` method that takes in two parameters:
 
 - `actualData` - The JSON data that needs to be validated.
 - `schema` - The JSON schema to compare the `actualData` against.
@@ -18,7 +18,7 @@ The method returns an object containing an array of issues found in the `actualD
 Here's an example of how to use `validateJSON`:
 
 ```js
-const { validateJSON } = require('json-validator-plus');
+const { validateJSON } = require('json-validate-utils');
 
 const actualData = {
 	name: 'John Doe',
@@ -26,13 +26,13 @@ const actualData = {
 };
 
 const schema = {
-	name: { required: true, dataType: 'string', minLength: 2, maxLength: 50 },
+	name: { required: true, type: 'string', min: 2, max: 50 },
 	email: {
 		required: true,
-		dataType: 'string',
+		type: 'string',
 		regex: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
 	},
-	age: { required: false, dataType: 'number', min: 18, max: 60 },
+	age: { required: false, type: 'number', min: 18, max: 60 },
 };
 
 const result = validateJSON(actualData, schema);
@@ -63,11 +63,7 @@ The following properties can be used in the `schema` object:
 
 `required` - Indicates whether the field is required or not. Defaults to false.
 
-`dataType` - The expected data type of the field. Possible values are string, number, boolean, object, and array.
-
-`minLength` - The minimum length of a string field.
-
-`maxLength` - The maximum length of a string field.
+`type` - The expected data type of the field. Possible values are string, number, boolean, object, and array.
 
 `min` - The minimum value of a number field.
 
